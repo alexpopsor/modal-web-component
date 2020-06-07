@@ -1,0 +1,98 @@
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Modal Web Component Demo</title>
+    <style>
+      .open-modal {
+        width: 30%;
+        height: 50px;
+        margin: 20px;
+        background-color: steelblue;
+        cursor: pointer;
+        font-size: larger;
+        font-weight: bold;
+      }
+
+      #modal-1 {
+        --button-1-background-color: red;
+        --button-2-background-color: green;
+        --button-3-background-color: green;
+        --button-4-background-color: red;
+      }
+
+      #modal-3 {
+        --modal-background-color: yellow;
+        --modal-title-color: green;
+        --modal-width: 500px;
+        --modal-border-radius: 10px;
+        --button-1-background-color: red;
+        --button-2-background-color: green;
+        --button-3-background-color: grey;
+        --button-4-background-color: brown;
+        --button-2-color: white;
+      }
+     
+    </style>
+  </head>
+  <body>
+    <button id="open-modal-1" class="open-modal">Open the modal component</button>
+    <my-element id="modal-1" title="This is my first modal custom element">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p slot="button1" id="button1">Button 1</p>
+      <p slot="button2" id="button2">Button 2</p>
+      <p slot="button3" id="button3">Button 3</p>
+      <p slot="button4" id="button4">Button 4</p>
+    </my-element>
+
+    <button id="open-modal-2" class="open-modal">Open the modal component without title</button>
+    <my-element id="modal-2" notitle>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+      <p slot="button1" id="button1">Button 1</p>
+      <p slot="button2" id="button2">Button 2</p>
+      <p slot="button3" id="button3">Button 3</p>
+      <p slot="button4" id="button4">Button 4</p>
+    </my-element>
+
+    <button id="open-modal-3" class="open-modal">Open customized modal component</button>
+    <my-element id="modal-3" title="I am a customized modal">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p slot="button1" id="button1">Button 1</p>
+      <p slot="button2" id="button2">Button 2</p>
+      <p slot="button3" id="button3">Button 3</p>
+      <p slot="button4" id="button4">Button 4</p>
+    </my-element>
+  </body>
+
+  <script type="module" src="../my-element.js"></script>
+  <script>
+    document.getElementById('open-modal-1').addEventListener("click", () => {
+      document.getElementById("modal-1").open()
+    })
+
+    document.getElementById('open-modal-2').addEventListener("click", () => {
+      document.getElementById("modal-2").open()
+    })
+
+    document.getElementById('open-modal-3').addEventListener("click", () => {
+      document.getElementById("modal-3").open()
+    })
+
+    document.getElementById("button1").addEventListener("click", () => {
+      alert("Successfully clicked on button 1");
+    })
+
+    document.getElementById("button2").addEventListener("click", () => {
+      alert("Successfully clicked on button 2");
+    })
+
+    document.getElementById("button3").addEventListener("click", () => {
+      alert("Successfully clicked on button 3");
+    })
+
+    document.getElementById("button4").addEventListener("click", () => {
+      alert("Successfully clicked on button 4");
+    })
+  </script>
+</html>
