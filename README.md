@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # LitElement JavaScript starter 
 
 This project includes a sample component using LitElement with JavaScript.
@@ -92,3 +93,6 @@ The site will usually be served at http://localhost:8000.
 ## More information
 
 See [Get started](https://lit-element.polymer-project.org/guide/start) on the LitElement site for more information.
+=======
+# modal-web-component
+>>>>>>> 65cf3e3b88b7151de7ac18f3ae28704641c11b12
